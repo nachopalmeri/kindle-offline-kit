@@ -6,7 +6,23 @@ Configurá tu Kindle con ayuda de **Claude Code o Codex** para leer EPUB y consu
 
 Caso documentado: **Paperwhite12.ª generación,7 pulgadas/PW6, firmware5.20.1**, KOReader v2026.07.1. Una experiencia individual, no compatibilidad universal. No hay jailbreak automático ni binarios en este repositorio.
 
-## Empezar: pegá esto en tu agente
+## Empezar: compartile este enlace a tu agente
+
+**Copiá la URL de este repositorio y mandásela a Claude Code o Codex:**
+
+https://github.com/nachopalmeri/kindle-offline-kit
+
+Podés acompañarla con: **“Usá esta guía para revisar mi Kindle y ayudarme a configurarlo para leer sin Wi-Fi.”**
+
+El agente debe leer estas instrucciones, comprobar qué acceso tiene y empezar por inspección y respaldo. No necesitás descargar paquetes, elegir un jailbreak ni copiar comandos de foros por tu cuenta. Si no puede abrir GitHub, usá el prompt siguiente y la opción de obtener la carpeta.
+
+Compartir el enlace inicia la guía: no sustituye comprobar compatibilidad, aprobar cambios ni los toques físicos necesarios en el Kindle.
+
+### Instrucciones de entrada para el agente
+
+Si el usuario comparte este repo para configurar su Kindle, leé AGENTS.md y docs/RUNBOOK.md, continuá con la inspección de lectura que el contexto autorice y explicá el siguiente paso concreto. No supongas acceso USB/shell ni compatibilidad por recibir una URL. No descargues/ejecutes payloads ni modifiques el dispositivo sin el plan y la aprobación indicados.
+
+### Prompt alternativo completo
 
 ~~~text
 Leé README.md, AGENTS.md y docs/RUNBOOK.md de este repositorio.

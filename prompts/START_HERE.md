@@ -1,5 +1,14 @@
 # Starter prompt
 
+Shortest version to send with the repository URL:
+
+~~~text
+https://github.com/nachopalmeri/kindle-offline-kit
+Usá esta guía para revisar mi Kindle y ayudarme a configurarlo para leer sin Wi-Fi.
+~~~
+
+The detailed prompt below is a fallback, not a required manual setup step.
+
 Help me configure my Kindle for offline reading; answer in my language. Read README.md, AGENTS.md and docs/RUNBOOK.md. Inspect tools already available before asking to install anything.
 
 Keep Amazon, my books and annotations. I want KOReader, authorized EPUB and offline English dictionaries. No on-device AI, servers, VPN, Bluetooth tools or destructive debloat. Audit existing modifications without deleting them automatically.
