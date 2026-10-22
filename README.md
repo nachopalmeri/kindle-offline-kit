@@ -23,12 +23,19 @@ Si falta un toque físico, explicá uno concreto y por qué.
 
 Abrí esta carpeta con Codex o Claude Code y pegá el texto. Necesitás un agente con acceso local a archivos/terminal y navegación, revisando sus permisos. CLAUDE.md remite a las mismas reglas de AGENTS.md. Una sesión de chat sin acceso a tu PC puede orientar, pero no controla el USB ni la pantalla. [Prompt completo](prompts/START_HERE.md).
 
+Para obtener la carpeta:
+
+~~~text
+git clone https://github.com/nachopalmeri/kindle-offline-kit.git
+cd kindle-offline-kit
+~~~
+
 ## Paso a paso
 
 1. **Identificá el equipo:** modelo exacto y firmware desde Información del dispositivo, batería cargada y cable de datos. No publiques serial/cuenta.
 2. **Si ya hay KOReader, salí normalmente** a Biblioteca Amazon antes del USB cuando sea necesario. PW6 usa MTP en Windows; no inventar una letra de unidad.
 3. **Respaldá primero:** dos adquisiciones privadas del almacenamiento visible, documentos/sidecars y árbol KOReader si existe. Verificá rutas/hashes y límites. [Respaldo](docs/BACKUP.md).
-4. **Comprobá compatibilidad en vivo:** leé [introducción](https://kindlemodding.org/jailbreaking/), [FAQ](https://kindlemodding.org/jailbreaking/jailbreak-faq.html) y [selector](https://kindlemodding.org/jailbreaking/wizard/). Si no acepta tu combinación exacta, detenerse. Hay una discrepancia documental registrada en [compatibilidad](docs/COMPATIBILITY.md).
+4. **Comprobá compatibilidad en vivo:** leé [introducción](https://kindlemodding.org/jailbreaking/), [FAQ](https://kindlemodding.org/jailbreaking/jailbreak-faq.html) y [selector](https://kindlemodding.org/jailbreak-wizard.html). Si no acepta tu combinación exacta, detenerse. El selector puede pedir un prefijo de identificación: ingresalo vos directamente en la página oficial, no publiques el serial ni lo pegues en un issue. Hay una discrepancia documental registrada en [compatibilidad](docs/COMPATIBILITY.md).
 5. **Aprobá el plan concreto:** archivos/procedencia, método, respaldo, riesgos y recuperación real. Conectar USB no autoriza todo. Algunas acciones requieren toques físicos.
 6. **Seguí el método oficial elegido**, sin mezclar exploits o generaciones. La [guía KOReader](https://github.com/koreader/koreader/wiki/Installation-on-Kindle-devices) documenta KPM con Véra; revisar el paquete vigente. No reinstalar un dispositivo que ya funciona.
 7. **Configurá lectura offline:** EPUB autorizados, diccionarios licenciados, vocabulario y disposición cómoda. [Lectura y diccionarios](docs/OFFLINE_READING.md).

@@ -1,7 +1,10 @@
 import importlib.util
 import json
 from pathlib import Path
+import subprocess
+import sys
 import tempfile
+from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
@@ -117,6 +120,49 @@ class BackupTests(unittest.TestCase):
             return iter(())
         with patch.object(tool.os, "walk", side_effect=inaccessible):
             with self.assertRaises(PermissionError):
+                tool.verify(self.source, self.backup, self.report)
+        self.assertFalse(self.report.exists())
+
+    def test_cli_codes_and_private_output(self):
+        self.pair("PRIVATE_TEST_MARKER.txt")
+        script = Path(__file__).resolve().parents[1] / "tools/verify_backup.py"
+        def run(source, report):
+            return subprocess.run(
+                [sys.executable, str(script), "--source", str(source),
+                 "--backup", str(self.backup), "--report", str(report)],
+                capture_output=True, text=True, check=False,
+            )
+        equal = run(self.source, self.report)
+        self.assertEqual(equal.returncode, 0)
+        self.assertTrue(json.loads(equal.stdout)["match"])
+        (self.backup / "PRIVATE_TEST_MARKER.txt").write_bytes(b"changed")
+        different = run(self.source, self.root / "different.json")
+        self.assertEqual(different.returncode, 1)
+        self.assertFalse(json.loads(different.stdout)["match"])
+        error = run(self.root / "PRIVATE_TEST_MARKER-missing", self.root / "error.json")
+        self.assertEqual(error.returncode, 2)
+        for result in (equal, different, error):
+            self.assertNotIn("PRIVATE_TEST_MARKER", result.stdout + result.stderr)
+            self.assertNotIn(str(self.root), result.stdout + result.stderr)
+        self.assertFalse((self.root / "error.json").exists())
+
+    def test_file_changed_during_hashing_aborts(self):
+        self.pair("mutating.txt")
+        original = Path.stat
+        observations = []
+        source_file = self.source / "mutating.txt"
+        def changing(path, *args, **kwargs):
+            actual = original(path, *args, **kwargs)
+            if path == source_file and not kwargs.get("follow_symlinks") is False:
+                observations.append(path)
+                if len(observations) == 2:
+                    return SimpleNamespace(
+                        st_size=actual.st_size + 1, st_mtime_ns=actual.st_mtime_ns,
+                        st_ino=actual.st_ino,
+                    )
+            return actual
+        with patch.object(Path, "stat", new=changing):
+            with self.assertRaises(ValueError):
                 tool.verify(self.source, self.backup, self.report)
         self.assertFalse(self.report.exists())
 

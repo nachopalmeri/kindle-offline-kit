@@ -8,7 +8,7 @@ Checked2026-10-22. Bounded search of relevant documentation, GitHub repositories
 |---|---|
 | [KindleModding introduction](https://kindlemodding.org/jailbreaking/) | Official entry point and current method-selection flow |
 | [FAQ](https://kindlemodding.org/jailbreaking/jailbreak-faq.html) | Preservation, architecture and recovery caveats; some text is older than newer projects |
-| [Wizard](https://kindlemodding.org/jailbreaking/wizard/) | Check exact combination on execution day, not this guide's case |
+| [Wizard](https://kindlemodding.org/jailbreak-wizard.html) | Canonical link followed from the official introduction; check exact combination on execution day, not this guide's case |
 | [Véra guide](https://kindlemodding.org/jailbreaking/Vera/) | Live instructions; older version-range prose remains at this check |
 | [Véra source metadata](https://github.com/KindleModding/kindlemodding.github.io/blob/main/content/jailbreaking/Vera/__index.md) | Lists PW6/5.20.1 at check date; source-versus-rendered discrepancy is an unresolved execution gate for a new device |
 | [Reset recovery](https://kindlemodding.org/jailbreaking/recovering-from-a-reset.html) | Why reset with update modifications is not a routine undo |
