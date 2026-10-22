@@ -1,0 +1,18 @@
+# Only the public source allowlist may be tracked.
+*
+!.gitignore
+!README.md
+!LICENSE
+!AGENTS.md
+!CLAUDE.md
+!SECURITY.md
+!CONTRIBUTING.md
+!docs/
+!docs/*.md
+!prompts/
+!prompts/*.md
+!tools/
+!tools/*.py
+!tests/
+!tests/*.py
+!sources.json
